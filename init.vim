@@ -20,6 +20,16 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-multiple-cursors'
 
+" Add maktaba and codefmt to the runtimepath.
+" (The latter must be installed before it can be used.)
+Plug 'google/vim-maktaba'
+Plug 'sihoang/vim-codefmt'
+" Also add Glaive, which is used to configure codefmt's maktaba flags. See
+" `:help :Glaive` for usage.
+Plug 'google/vim-glaive'
+
+Plug 'yggdroot/indentline'
+Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
@@ -27,6 +37,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mhartington/nvim-typescript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'othree/yajs.vim'
+
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -121,4 +132,7 @@ nmap Ml <Plug>(easymotion-overwin-line)
 " Move current line up/down
 map <A-UP> :m-2<CR>
 map <A-DOWN> :m+1<CR>
+
+" https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
+let g:vim_json_syntax_conceal = 0
 
