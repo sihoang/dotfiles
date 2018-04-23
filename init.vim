@@ -77,6 +77,7 @@ map <C-j> :tabp<CR>
 map <C-k> :tabn<CR>
 
 " Theme
+let g:airline_powerline_fonts = 1
 let g:one_allow_italics = 1
 
 "Credit joshdick
@@ -101,13 +102,14 @@ colorscheme one
 
 autocmd vimenter * NERDTree | wincmd w
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let NERDTreeDirArrows=1
-let NERDTreeMinimalUI = 1
-let NERDTreeShowHidden=1
+
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeShowHidden = 1
 map <C-h> :NERDTreeToggle<CR>
 
-" Extra spaces
-let NERDSpaceDelims=1
+" Add spaces after comment delimiters
+let g:NERDSpaceDelims=1
 
 " Use silver search
 let g:ackprg = 'ag --vimgrep'
