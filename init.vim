@@ -118,6 +118,7 @@ let g:ackprg = 'ag --vimgrep'
 let g:deoplete#enable_at_startup = 1
 
 " Lint fix
+let g:ale_lint_on_text_changed = 'never' " save battery
 let g:ale_fixers = {
   \ 'javascript': ['eslint'],
   \ 'typescript': ['tslint']
