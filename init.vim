@@ -33,6 +33,7 @@ Plug 'yggdroot/indentline'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+Plug 'tomlion/vim-solidity'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mhartington/nvim-typescript'
@@ -122,7 +123,8 @@ let g:deoplete#enable_at_startup = 1
 let g:ale_lint_on_text_changed = 'never' " save battery
 let g:ale_fixers = {
   \ 'javascript': ['eslint'],
-  \ 'typescript': ['tslint']
+  \ 'typescript': ['tslint'],
+  \ 'solidity': ['solium']
   \ }
 nmap <leader>d <Plug>(ale_fix)
 
