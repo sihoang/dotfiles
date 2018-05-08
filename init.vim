@@ -4,6 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'airblade/vim-rooter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-abolish'
@@ -138,4 +139,7 @@ map <A-DOWN> :m+1<CR>
 
 " https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
 let g:vim_json_syntax_conceal = 0
+
+" Before searching directories, manually call rooter
+let g:rooter_manual_only = 1
 
