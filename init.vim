@@ -30,17 +30,21 @@ Plug 'sihoang/vim-codefmt'
 " Also add Glaive, which is used to configure codefmt's maktaba flags. See
 " `:help :Glaive` for usage.
 Plug 'google/vim-glaive'
+Plug 'mattn/emmet-vim'
 
 Plug 'yggdroot/indentline'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'tomlion/vim-solidity'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mhartington/nvim-typescript'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'othree/yajs.vim'
+
+" Redundant
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'othree/yajs.vim'
 
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -123,12 +127,16 @@ let g:deoplete#enable_at_startup = 1
 
 " Lint fix
 let g:ale_lint_on_text_changed = 'never' " save battery
+let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_fixers = {
-  \ 'javascript': ['eslint'],
-  \ 'typescript': ['tslint'],
+  \ 'javascript': ['prettier', 'eslint'],
+  \ 'typescript': ['prettier', 'tslint'],
   \ 'solidity': ['solium']
   \ }
 nmap <leader>d <Plug>(ale_fix)
+
+" custom codefmt with prettier
+autocmd Filetype html,json,typescript,javascript,jsx,javascript.jsx let b:codefmt_formatter = 'prettier'
 
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
@@ -147,3 +155,10 @@ let g:vim_json_syntax_conceal = 0
 " Before searching directories, manually call rooter
 let g:rooter_manual_only = 1
 
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+  \      'extends' : 'jsx',
+  \  },
+  \}
+
+let g:session_autosave = 'no'
