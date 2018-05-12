@@ -130,8 +130,8 @@ let g:ale_lint_on_text_changed = 'never' " save battery
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_fixers = {
-  \ 'javascript': ['prettier', 'eslint'],
-  \ 'typescript': ['prettier', 'tslint'],
+  \ 'javascript': ['eslint'],
+  \ 'typescript': ['tslint'],
   \ 'solidity': ['solium']
   \ }
 nmap <leader>d <Plug>(ale_fix)
