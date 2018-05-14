@@ -41,6 +41,7 @@ Plug 'tomlion/vim-solidity'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mhartington/nvim-typescript'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Redundant
 " Plug 'HerringtonDarkholme/yats.vim'
@@ -161,5 +162,3 @@ let g:user_emmet_settings = {
   \      'extends' : 'jsx',
   \  },
   \}
-
-let g:session_autosave = 'no'
