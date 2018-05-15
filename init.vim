@@ -13,6 +13,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -146,10 +147,6 @@ nmap s <Plug>(easymotion-overwin-f2)
 " Move to line
 map Ml <Plug>(easymotion-bd-jk)
 nmap Ml <Plug>(easymotion-overwin-line)
-
-" Move current line up/down
-map <A-UP> :m-2<CR>
-map <A-DOWN> :m+1<CR>
 
 " https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
 let g:vim_json_syntax_conceal = 0
