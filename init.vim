@@ -34,7 +34,9 @@ Plug 'sihoang/vim-codefmt'
 Plug 'google/vim-glaive'
 Plug 'mattn/emmet-vim'
 
+Plug 'ervandew/supertab'
 Plug 'yggdroot/indentline'
+Plug 'bronson/vim-trailing-whitespace'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -69,6 +71,12 @@ endif
 
 " Remap leader key
 let mapleader = ','
+
+" Exit to normal mode
+inoremap jj <ESC>
+
+" Save extra shift
+nnoremap ; :
 
 " Always show at least x lines above/below the cursor.
 if !&scrolloff
