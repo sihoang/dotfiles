@@ -158,24 +158,24 @@ nmap <Leader>d <Plug>(ale_fix)
 " custom codefmt with prettier
 autocmd Filetype html,json,typescript,javascript,jsx,javascript.jsx let b:codefmt_formatter = 'prettier'
 
-" <Leader>f{char} to move to {char}
+" Move to word
+map <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" Move to line
+map <Leader>l <Plug>(easymotion-bd-jk)
+nmap <Leader>l <Plug>(easymotion-overwin-line)
+
+" Move to {char}
 map <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
 
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
 
-" Move to word
-map <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
-
-" Gif config
+" Searn n chars
 map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-
-" Move to line
-map <Leader>l <Plug>(easymotion-bd-jk)
-nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 " https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
 let g:vim_json_syntax_conceal = 0
