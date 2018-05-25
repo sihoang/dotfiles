@@ -41,9 +41,13 @@ Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
+Plug 'galooshi/vim-import-js'
 Plug 'tomlion/vim-solidity'
 Plug 'w0rp/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'shougo/neoinclude.vim'
+Plug 'shougo/neosnippet.vim'
+Plug 'honza/vim-snippets'
 Plug 'mhartington/nvim-typescript'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
@@ -95,8 +99,6 @@ if maparg('<C-l>', 'n') ==# ''
 endif
 
 map <C-s> :wincmd w<CR>
-map <C-j> :tabp<CR>
-map <C-k> :tabn<CR>
 
 " Theme
 let g:airline_powerline_fonts = 1
@@ -187,4 +189,31 @@ let g:user_emmet_settings = {
   \ 'javascript.jsx' : {
   \   'extends' : 'jsx',
   \ },
+  \ }
+
+" Tell neosnippet about vim-snippets
+let g:neosnippet#disable_runtime_snippets = {
+  \ '_': 1,
+  \ }
+let g:neosnippet#snippets_directory = '~/.local/share/nvim/plugged/vim-snippets/snippets'
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" Ignore javascript file extensions
+let g:neoinclude#exts = {
+  \ 'typescript': ['ts', 'tsx'],
+  \ 'javascript': ['js', 'jsx'],
+  \ }
+
+let g:neoinclude#patterns = {
+  \ 'typescript': '^\s*\<\%(require\|import\)\>',
+  \ 'javascript.jsx': '^\s*\<\%(require\|import\)\>',
+  \ }
+
+let g:neoinclude#reverse_exprs = {
+  \ 'typescript': 'substitute(v:fname, "\.{ts|tsx}$", "", "")',
+  \ 'javascript.jsx': 'substitute(v:fname, "\.{js|jsx}$", "", "")',
   \ }
