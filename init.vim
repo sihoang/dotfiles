@@ -46,7 +46,7 @@ Plug 'tomlion/vim-solidity'
 Plug 'w0rp/ale'
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'shougo/neoinclude.vim'
-Plug 'shougo/neosnippet.vim'
+Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mhartington/nvim-typescript'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -191,17 +191,6 @@ let g:user_emmet_settings = {
   \ },
   \ }
 
-" Tell neosnippet about vim-snippets
-let g:neosnippet#disable_runtime_snippets = {
-  \ '_': 1,
-  \ }
-let g:neosnippet#snippets_directory = '~/.local/share/nvim/plugged/vim-snippets/snippets'
-
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-
 " Ignore javascript file extensions
 let g:neoinclude#exts = {
   \ 'typescript': ['ts', 'tsx'],
@@ -217,3 +206,14 @@ let g:neoinclude#reverse_exprs = {
   \ 'typescript': 'substitute(v:fname, "\.{ts|tsx}$", "", "")',
   \ 'javascript.jsx': 'substitute(v:fname, "\.{js|jsx}$", "", "")',
   \ }
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger = "<c-k>"
+let g:UltiSnipsJumpForwardTrigger = "<c-k>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit = "vertical"
+
+" Snippet directories
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.local/share/nvim/plugged/vim-snippets/UltiSnips']
