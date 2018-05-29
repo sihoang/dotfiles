@@ -44,6 +44,11 @@ Plug 'leafgarland/typescript-vim'
 Plug 'galooshi/vim-import-js'
 Plug 'tomlion/vim-solidity'
 Plug 'w0rp/ale'
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': 'bash install.sh',
+  \ }
+Plug 'junegunn/fzf'
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'shougo/neoinclude.vim'
 Plug 'sirver/ultisnips'
@@ -217,3 +222,12 @@ let g:UltiSnipsEditSplit = "vertical"
 
 " Snippet directories
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.local/share/nvim/plugged/vim-snippets/UltiSnips']
+
+" Language server
+" Require https://github.com/sourcegraph/javascript-typescript-langserver
+let g:LanguageClient_serverCommands = {
+  \ 'javascript.jsx': ['javascript-typescript-stdio'],
+  \ 'typescript': ['javascript-typescript-stdio'],
+  \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
