@@ -198,8 +198,8 @@ let g:neoinclude#exts = {
   \ }
 
 let g:neoinclude#patterns = {
-  \ 'typescript': '^\s*\<\%(require\|import\)\>',
-  \ 'javascript.jsx': '^\s*\<\%(require\|import\)\>',
+  \ 'typescript': '^\s*\<\%(import\)\>',
+  \ 'javascript.jsx': '\<\%(require\|import\)\>',
   \ }
 
 let g:neoinclude#reverse_exprs = {
