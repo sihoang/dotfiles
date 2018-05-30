@@ -53,13 +53,12 @@ Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'shougo/neoinclude.vim'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'mhartington/nvim-typescript'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Redundant
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'othree/yajs.vim'
-
+" Plug 'mhartington/nvim-typescript' " Use language server instead
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
