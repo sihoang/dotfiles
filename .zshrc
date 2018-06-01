@@ -82,6 +82,7 @@ ZSH_THEME="af-magic"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  hub
   nvm
   npm
   yarn
