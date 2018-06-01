@@ -36,7 +36,7 @@ Plug 'mattn/emmet-vim'
 
 Plug 'ervandew/supertab'
 Plug 'yggdroot/indentline'
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -138,6 +138,9 @@ map <C-h> :NERDTreeToggle<CR>
 
 " Add spaces after comment delimiters
 let g:NERDSpaceDelims=1
+
+" ntpeters/vim-better-whitespace
+let g:better_whitespace_enabled=1
 
 " Use silver search
 let g:ackprg = 'ag --vimgrep'
