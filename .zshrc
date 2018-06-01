@@ -1,5 +1,11 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Fix tmux to have the same $PATH as zsh
+if [ -x /usr/libexec/path_helper ]; then
+  PATH="" # Add this line
+  eval `/usr/libexec/path_helper -s`
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
