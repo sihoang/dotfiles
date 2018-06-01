@@ -54,7 +54,9 @@ Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-abolish'
 
 " A command-line fuzzy finder
-Plug 'junegunn/fzf'
+" brew install fzf
+Plug '/usr/local/opt/fzf' " alternative Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " fugitive.vim: A Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
