@@ -4,6 +4,17 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
+# Add Go
+if [ -s "$HOME/go/bin" ]
+then
+  export GOPATH="$HOME/go"
+  export GOROOT="$(brew --prefix golang)/libexec"
+  export PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
+  test -d "${GOPATH}" || mkdir "${GOPATH}"
+	test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
+fi
+
+
 . `brew --prefix`/etc/profile.d/z.sh
 
 # Path to your oh-my-zsh installation.
