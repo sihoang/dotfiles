@@ -205,7 +205,9 @@ call plug#end()
 """ Native Configs
 """"""
 set nu
-set clipboard+=unnamedplus
+" Don't want to spam the clipboard
+" use "+ y/p
+" set clipboard+=unnamedplus
 autocmd BufEnter * silent! lcd %:p:h
 set tabstop=2
 set shiftwidth=2
