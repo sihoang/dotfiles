@@ -20,11 +20,10 @@ then
 	test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 fi
 
-
-. `brew --prefix`/etc/profile.d/z.sh
+. $HOME/Desktop/wetrust/z/z.sh
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/hoangnguyen/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
