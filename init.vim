@@ -303,6 +303,11 @@ nnoremap <Leader>a :Ack
 let g:rooter_manual_only = 1
 
 
+" xolox/vim-session
+" Annoying confirm every exit
+let g:session_autosave = 'no'
+
+
 """""""
 """ Faster coder
 """""""
