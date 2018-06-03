@@ -11,11 +11,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Add Go
-if [ -s "$HOME/go/bin" ]
+if [ -d "/usr/local/go/bin" ]
 then
   export GOPATH="$HOME/go"
-  export GOROOT="$(brew --prefix golang)/libexec"
-  export PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
+  export GOROOT="/usr/local/go"
+  export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
   test -d "${GOPATH}" || mkdir "${GOPATH}"
 	test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 fi
@@ -118,3 +118,5 @@ export EDITOR='nvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
