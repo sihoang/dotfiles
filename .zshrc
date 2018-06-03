@@ -1,28 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Fix tmux to have the same $PATH as zsh
-if [ -x /usr/libexec/path_helper ]; then
-  PATH="" # Add this line
-  eval `/usr/libexec/path_helper -s`
-fi
-
-# Disable this before installing nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
-# Install Go first https://golang.org/doc/install#tarball
-if [ -d "/usr/local/go/bin" ]
-then
-  export GOPATH="$HOME/go"
-  export GOROOT="/usr/local/go"
-  export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
-  test -d "${GOPATH}" || mkdir "${GOPATH}"
-	test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
-fi
-
-. $HOME/Desktop/wetrust/z/z.sh
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -85,6 +63,7 @@ plugins=(
   hub
   nvm
   npm
+  rvm
   yarn
 )
 
@@ -119,19 +98,3 @@ export EDITOR='nvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Result of installing
-# Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Result of installing cpan App::cpanminus
-# local::lib
-PATH="${HOME}/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"${HOME}/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"; export PERL_MM_OPT;
-
-# Result of installing https://gorails.com/setup/ubuntu/18.10
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"

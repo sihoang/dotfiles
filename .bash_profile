@@ -12,4 +12,3 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 alias ls="ls -GF"
 alias lgeth="geth --rpc --rpcapi eth,net,admin,personal"
 alias ageth="geth attach http://localhost:8545"
- 
