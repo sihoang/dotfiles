@@ -1,6 +1,9 @@
 #!/bin/sh
-# This script checks if the local configs are in-sync with dotfiles repo
-# Perform diff localversion gitversion
+# This script checks if the local configs are in-sync with dotfiles repo.
+# Perform diff localversion gitversion.
+# It will prompt you before making any changes.
+#
+#
 # Usage: ./sync.sh
 
 
@@ -31,11 +34,12 @@ for pair in "${TRACKED_ITEMS[@]}"; do
     Checking item $current_items of $total_items
   ";
 
-  diff_content=$(diff -ruN --unidirectional-new-file $1 $2 | colordiff);
+  diff_content=$(colordiff -ruN --unidirectional-new-file $1 $2);
+  diff_error=$?;
 
-  if [ "$diff_content" == "" ]; then
+  if [ $diff_error -eq 0 ]; then
     echo "Up to date $1 $2";
-  else
+  elif [ $diff_error -eq 1 ]; then
     # clear;
     echo $diff_content;
     echo "
@@ -64,6 +68,13 @@ for pair in "${TRACKED_ITEMS[@]}"; do
         cp $2 $1;
         ;;
     esac
+  else
+    echo "
+      ERROR: exit $diff_error
+      Compare files manually:
+        $1
+        $2
+    "
   fi
 
   echo ;
