@@ -3,7 +3,8 @@
 
 [[ -s "$HOME/.bash_prompt" ]] && source "$HOME/.bash_prompt"
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+# JAVA in MacOS
+[[ -s "/usr/libexec/java_home" ]] && export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
