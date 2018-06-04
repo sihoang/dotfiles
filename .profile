@@ -40,14 +40,25 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 
-# Install Go first https://golang.org/doc/install#tarball
-if [ -d "/usr/local/go/bin" ]
-then
+# Install Go manually from tar https://golang.org/doc/install#tarball
+if [ -d "/usr/local/go" ]; then
   export GOPATH="$HOME/go"
   export GOROOT="/usr/local/go"
-  PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
   test -d "${GOPATH}" || mkdir "${GOPATH}"
-	test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
+fi
+
+
+# brew install go
+if [ -d "/usr/local/opt/go" ]; then
+  export GOPATH="$HOME/go"
+  export GOROOT="/usr/local/opt/go/libexec"
+  test -d "${GOPATH}" || mkdir "${GOPATH}"
+fi
+
+
+# Set PATH if go is installed
+if [ -d "$GOPATH" ]; then
+  PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 fi
 
 
