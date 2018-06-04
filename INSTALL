@@ -1,0 +1,27 @@
+For new machine, install
+
+nvm
+rvm
+go
+
+zsh
+ohmyzsh
+z
+
+neovim
+vim-plug
+nerd fonts
+ag the silver search
+importjs
+js-ts-languageserver
+
+tmux
+tpm
+urlview or extract_url
+facebook pathpicker
+
+hub
+
+
+sync.sh dependencies:
+colordiff
