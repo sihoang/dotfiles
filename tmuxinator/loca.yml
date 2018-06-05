@@ -1,0 +1,11 @@
+# ~/.tmuxinator/loca.yml
+
+name: loca
+root: ~/Desktop/wetrust/loca-ethlet-cli
+
+windows:
+    - editor:
+        layout: main-vertical
+        panes:
+            - vim
+            -
