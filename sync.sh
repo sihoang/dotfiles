@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This script checks if the local configs are in-sync with dotfiles repo.
 # Perform diff localversion gitversion.
 # It will prompt you before making any changes.
@@ -7,7 +7,7 @@
 # Usage: ./sync.sh
 
 
-# Declare items (files and/or directories) to be tracked
+# Declare items to be tracked. An item can be a file or a directory (TODO)
 # Array of tuples: local,git
 # NO SPACES IN BETWEEN
 declare -a TRACKED_ITEMS=(
