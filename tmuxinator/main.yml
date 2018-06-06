@@ -1,0 +1,12 @@
+# ~/.tmuxinator/main.yml
+
+name: main
+root: ~/Desktop/wetrust
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+          -
+          -
+          -

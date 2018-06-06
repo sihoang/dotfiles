@@ -4,8 +4,9 @@ name: loca
 root: ~/Desktop/wetrust/loca-ethlet-cli
 
 windows:
-    - editor:
+    - info:
         layout: main-vertical
         panes:
-            - vim
-            -
+            - nvim
+            - git --no-pager diff
+    - editor: nvim
