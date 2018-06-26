@@ -180,6 +180,9 @@ Plug 'google/vim-maktaba'
 " Used to configure codefmt's maktaba flags. See :help Glaive
 Plug 'google/vim-glaive'
 
+" Easy note taking in Vim
+Plug 'xolox/vim-notes'
+
 
 """""""
 """ Redundancy
@@ -422,3 +425,11 @@ let g:LanguageClient_serverCommands = {
   \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+
+""""""
+""" Behind the scene tools and/or dependencies
+""""""
+let g:notes_directories = ['~/SparkleShare/github.com/private-notes']
+let g:notes_suffix = '.md'
+
