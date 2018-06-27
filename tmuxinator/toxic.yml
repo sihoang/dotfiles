@@ -1,0 +1,6 @@
+# ~/.tmuxinator/toxic.yml
+
+name: toxic
+root: ~/
+windows:
+  - toxic: toxic

@@ -1,0 +1,7 @@
+# ~/.tmuxinator/chat.yml
+
+name: chat
+root: ~/
+windows:
+  - weechat: weechat
+  - toxic: toxic

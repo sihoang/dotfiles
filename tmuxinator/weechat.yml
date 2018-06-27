@@ -1,0 +1,6 @@
+# ~/.tmuxinator/weechat.yml
+
+name: weechat
+root: ~/
+windows:
+  - weechat: weechat
