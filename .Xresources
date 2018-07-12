@@ -1,4 +1,4 @@
-Xft.dpi: 172
+Xft.dpi: 180
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
@@ -43,7 +43,7 @@ Xcursor.theme: xcursor-breeze
 *color7:                          #C7C7C7
 *color15:                         #FFFFFF
 
-URxvt*font:                       xft:BitstreamVeraSansMono Nerd Font Mono:antialias=true,xft:DejaVu Sans Mono for Powerline
+URxvt*font:                       xft:BitstreamVeraSansMono Nerd Font:antialias=true,xft:DejaVu Sans Mono for Powerline
 URxvt*loginShell:                 true
 
 ! alternative font settings with 'terminus':
