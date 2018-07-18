@@ -301,11 +301,6 @@ let g:ackprg = 'ag --vimgrep'
 nnoremap <Leader>a :Ack
 
 
-" airblade/vim-rooter
-" Before searching directories, manually call rooter
-let g:rooter_manual_only = 1
-
-
 " xolox/vim-session
 " Annoying confirm every exit
 let g:session_autosave = 'no'
