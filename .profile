@@ -8,15 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-  [ -f "$HOME/.fzf.bash" ] && . $HOME/.fzf.bash
-fi
-
-if [ -n "$ZSH_VERSION" ]; then
-  [ -f "$HOME/.fzf.zsh" ] && . $HOME/.fzf.zsh
-fi
-
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
@@ -27,11 +18,8 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-
-# Disable this before installing nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
 
 # Install Go manually from tar https://golang.org/doc/install#tarball
 if [ -d "/usr/local/go" ]; then
