@@ -136,6 +136,9 @@ Plug 'leafgarland/typescript-vim'
 " 0.2.0+ and Vim 8 while you edit your text files.
 Plug 'w0rp/ale'
 
+" Provides database access to many dbms (Oracle, Sybase, Microsoft, MySQL, DBI,..)
+Plug 'vim-scripts/dbext.vim'
+
 " codefmt is a utility for syntax-aware code formatting. It contains several
 " built-in formatters, and allows new formatters to be registered by other
 " plugins.
@@ -299,6 +302,11 @@ let g:better_whitespace_enabled=1
 let g:ackprg = 'ag --vimgrep'
 " Remap ack
 nnoremap <Leader>a :Ack
+
+
+" airblade/vim-rooter
+" Before searching directories, manually call rooter
+let g:rooter_manual_only = 1
 
 
 " xolox/vim-session
