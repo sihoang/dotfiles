@@ -1,15 +1,7 @@
+#
+# ~/.bash_profile
+#
 
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+[[ -f ~/.bashrc ]] && . ~/.bashrc
 
-[[ -s "$HOME/.bash_prompt" ]] && source "$HOME/.bash_prompt"
-
-# JAVA in MacOS
-[[ -s "/usr/libexec/java_home" ]] && export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
-export LSCOLORS=GxFxCxDxBxegedabagaced
-
-# Aliases
-# -------
-alias ls="ls -GF"
-alias lgeth="geth --rpc --rpcapi eth,net,admin,personal"
-alias ageth="geth attach http://localhost:8545"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
