@@ -41,7 +41,6 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 
 # Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border pixel 1
 for_window [title="File Transfer*"] floating enable
 
 
@@ -88,7 +87,7 @@ exec --no-startup-id sh ~/.fehbg
 # exec_always --no-startup-id ff-theme-util
 # exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id xbacklight -set 50
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
 #############################
@@ -153,7 +152,7 @@ mode "$mode_gaps_outer" {
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:BitstreamVeraSansMono Nerd Font:antialias=true
+font pango:BitstreamVeraSansMono Nerd Font:antialias=true 11
 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -300,7 +299,22 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-# bar {
-        # status_command i3status
+bar {
+        output eDP1
+        status_command i3status
+        tray_output none
+        font pango:BitstreamVeraSansMono Nerd Font 10
+        # font pango:Noto Sans 9
+        colors {
+            background #cccccc
+            statusline #000000
+            separator #666666
+
+            focused_workspace  #8e8e8e #b1b1b1 #000000
+            active_workspace   #cccccc #999999 #000000
+            inactive_workspace #cccccc #dddddd #777777
+            urgent_workspace   #cccccc #900000 #000000
+            binding_mode       #8e8e8e #0a6cf5 #000000
+        }
         # i3bar_command $HOME/.config/polybar/launch.sh
-# }
+}
