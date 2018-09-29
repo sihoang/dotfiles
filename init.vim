@@ -361,6 +361,14 @@ let g:user_emmet_settings = {
 " https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
 let g:vim_json_syntax_conceal = 0
 
+" fatih/vim-go
+" Use this option to jump to an existing buffer for the split, vsplit and tab
+" mappings of |:GoDef|. By default it's disabled.
+let g:go_def_reuse_buffer = 1
+
+" disable the default `gd` mapping to use the go-def-vertical
+let g:go_def_mapping_enabled = 0
+au Filetype go nmap gd <Plug>(go-def-vertical)
 
 """""""
 """ Language Formatters and Utils

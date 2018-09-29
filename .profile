@@ -37,6 +37,13 @@ if [ -d "/usr/local/opt/go" ]; then
 fi
 
 
+# pacman -S go
+if [ -d "/usr/lib/go" ]; then
+  export GOPATH="$HOME/go"
+  export GOROOT="/usr/lib/go"
+  test -d "${GOPATH}" || mkdir "${GOROOT}"
+fi
+
 # Set PATH if go is installed
 if [ -d "$GOPATH" ]; then
   PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
