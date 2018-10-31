@@ -368,6 +368,10 @@ let g:vim_json_syntax_conceal = 0
 " mappings of |:GoDef|. By default it's disabled.
 let g:go_def_reuse_buffer = 1
 
+" gofmt + goimports on save
+" https://github.com/fatih/vim-go/issues/207
+let g:go_fmt_command = "goimports"
+
 " disable the default `gd` mapping to use the go-def-vertical
 let g:go_def_mapping_enabled = 0
 au Filetype go nmap gd <Plug>(go-def-vertical)
