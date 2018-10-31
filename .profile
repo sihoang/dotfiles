@@ -41,7 +41,7 @@ fi
 if [ -d "/usr/lib/go" ]; then
   export GOPATH="$HOME/go"
   export GOROOT="/usr/lib/go"
-  test -d "${GOPATH}" || mkdir "${GOROOT}"
+  test -d "${GOPATH}" || mkdir "${GOPATH}"
 fi
 
 # Set PATH if go is installed
