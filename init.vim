@@ -127,6 +127,8 @@ Plug 'mxw/vim-jsx'
 " Typescript syntax files for Vim
 Plug 'leafgarland/typescript-vim'
 
+" Basic vim/terraform integration
+Plug 'hashivim/vim-terraform'
 
 """""""
 """ Language Formatters and Utils
@@ -369,6 +371,9 @@ let g:go_def_reuse_buffer = 1
 " disable the default `gd` mapping to use the go-def-vertical
 let g:go_def_mapping_enabled = 0
 au Filetype go nmap gd <Plug>(go-def-vertical)
+
+" hashivim/vim-terraform
+let g:terraform_fmt_on_save=1
 
 """""""
 """ Language Formatters and Utils
