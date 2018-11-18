@@ -63,6 +63,8 @@ plugins=(
   github
   npm
   yarn
+  terraform
+  aws
 )
 
 source $ZSH/oh-my-zsh.sh
