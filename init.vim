@@ -450,6 +450,6 @@ nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 """"""
 """ Behind the scene tools and/or dependencies
 """"""
-let g:notes_directories = ['~/Sync/private-notes']
+let g:notes_directories = ['~/SyncMobile/private-notes']
 let g:notes_suffix = '.md'
 
