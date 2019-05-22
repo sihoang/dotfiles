@@ -46,6 +46,7 @@ fi
 
 # Set PATH if go is installed
 if [ -d "$GOPATH" ]; then
+  export GO111MODULE=on
   PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 fi
 
