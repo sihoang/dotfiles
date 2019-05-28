@@ -102,6 +102,6 @@ export EDITOR='nvim'
 ### These have to run for every new shell
 [ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-. $HOME/Desktop/wetrust/z/z.sh
+[ -f ~/Desktop/wetrust/z/z.sh ] && . $HOME/Desktop/wetrust/z/z.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -19,30 +19,8 @@ new_float normal
 # Hide borders
 hide_edge_borders none
 
-# change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
-
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
-exec --no-startup-id volumeicon
-#bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
-
-################################################################################################
-
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-
 # Open specific applications in floating mode
 for_window [title="File Transfer*"] floating enable
-
 
 # Set shut down, restart and locking features
 # sleep 1 adds a small delay to prevent possible race conditions with suspend
@@ -68,26 +46,9 @@ mode "$mode_system" {
 bindsym $mod+9 exec --no-startup-id $Locker
 
 # Autostart applications
-# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec --no-startup-id nitrogen --restore; sleep 1;
-# exec --no-startup-id compton -b
-exec --no-startup-id nm-applet
-# exec --no-startup-id xfce4-power-manager
-# exec --no-startup-id pamac-tray
-# exec --no-startup-id clipit
-# exec --no-startup-id flatpak run org.sparkleshare.SparkleShare
-# exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
-# exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
-# exec --no-startup-id xautolock -time 10 -detectsleep -locker blurlock
-exec --no-startup-id xautolock -time 10 -detectsleep -locker $Locker
+exec --no-startup-id xautolock -time 10 -detectsleep -locker "$Locker"
 exec --no-startup-id xss-lock -- $Locker
-exec --no-startup-id sh ~/.fehbg
-# exec_always --no-startup-id ff-theme-util
-# exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id xbacklight -set 50
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id xbacklight -set 50
 
 
 #############################
@@ -297,13 +258,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
         status_command i3status
         tray_output none
-        font pango:BitstreamVeraSansMono Nerd Font 10
-        # font pango:Noto Sans 9
         colors {
             background #cccccc
             statusline #000000
@@ -315,5 +272,4 @@ bar {
             urgent_workspace   #cccccc #900000 #000000
             binding_mode       #8e8e8e #0a6cf5 #000000
         }
-        # i3bar_command $HOME/.config/polybar/launch.sh
 }
