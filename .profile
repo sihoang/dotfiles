@@ -18,8 +18,13 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+# nvm stuff
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  . "$NVM_DIR/nvm.sh" # This loads nvm
+fi
+
 
 # Install Go manually from tar https://golang.org/doc/install#tarball
 if [ -d "/usr/local/go" ]; then
@@ -44,12 +49,17 @@ if [ -d "/usr/lib/go" ]; then
   test -d "${GOPATH}" || mkdir "${GOPATH}"
 fi
 
+
 # Set PATH if go is installed
 if [ -d "$GOPATH" ]; then
   export GO111MODULE=on
   PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 fi
 
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+if [ -d "$HOME/.rvm/bin" ]; then
+  export PATH="$PATH:$HOME/.rvm/bin"
+  . "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
 
