@@ -16,8 +16,6 @@ declare -a TRACKED_ITEMS=(
  "$HOME/.zshrc",".zshrc"
  "$HOME/.zprofile",".zprofile"
  "$HOME/.profile",".profile"
- "$HOME/.bash_profile",".bash_profile"
- "$HOME/.bashrc",".bashrc"
  "$HOME/.Xresources",".Xresources"
  "$HOME/.i3/config","i3config"
 )
