@@ -50,6 +50,14 @@ if [ -d "/usr/lib/go" ]; then
 fi
 
 
+# dnf install golang
+if [ -d "/usr/lib/golang" ]; then
+  export GOPATH="$HOME/go"
+  export GOROOT="/usr/lib/golang"
+  test -d "${GOPATH}" || mkdir "${GOPATH}"
+fi
+
+
 # Set PATH if go is installed
 if [ -d "$GOPATH" ]; then
   export GO111MODULE=on
