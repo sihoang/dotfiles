@@ -130,6 +130,10 @@ Plug 'leafgarland/typescript-vim'
 " Basic vim/terraform integration
 Plug 'hashivim/vim-terraform'
 
+" Vim configuration for Rust
+Plug 'rust-lang/rust.vim'
+
+
 """""""
 """ Language Formatters and Utils
 """""""

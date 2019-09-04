@@ -71,3 +71,9 @@ if [ -d "$HOME/.rvm/bin" ]; then
   . "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
+
+# Add Rust which is installed via the default rustup
+if [ -d "$HOME/.cargo/bin" ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
