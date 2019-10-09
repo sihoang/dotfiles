@@ -20,7 +20,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Adaptation of one-light and one-dark colorschemes for Vim
-Plug 'rakr/vim-one'
+" Plug 'rakr/vim-one'
+
+" A dark color scheme for vim
+Plug 'keitanakamura/neodark.vim'
 
 " This adds syntax for nerdtree on most common file extensions.
 " This is intended to be used with vim-devicons to add color to icons or
@@ -247,7 +250,10 @@ set display+=lastline
 
 set incsearch
 
-set termguicolors
+" Uncomment if terminal supports true color
+" Test: printf "\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n"
+" If TRUECOLOR appears in RED then the terminal supports true color
+" set termguicolors
 
 
 """""""
@@ -281,9 +287,15 @@ map <C-s> :wincmd w<CR>
 
 " vim-airline
 let g:airline_powerline_fonts = 1
-let g:one_allow_italics = 1
-set background=dark
-colorscheme one
+let g:airline_theme='tomorrow'
+
+" keitanakamura/neodark.vim
+colorscheme neodark
+
+" rakr/vim-one
+" let g:one_allow_italics = 1
+" set background=dark
+" colorscheme one
 
 
 " ryanoasis/vim-devicons
