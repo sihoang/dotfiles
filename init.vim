@@ -127,6 +127,9 @@ Plug 'mxw/vim-jsx'
 " Typescript syntax files for Vim
 Plug 'leafgarland/typescript-vim'
 
+" React JSX syntax highlighting for vim and Typescript
+Plug 'peitalin/vim-jsx-typescript'
+
 " Basic vim/terraform integration
 Plug 'hashivim/vim-terraform'
 
@@ -425,7 +428,7 @@ nmap <Leader>d <Plug>(ale_fix)
 
 " sihoang/codefmt
 " custom codefmt with prettier
-autocmd Filetype html,json,typescript,javascript,jsx,javascript.jsx let b:codefmt_formatter = 'prettier'
+autocmd Filetype html,json,typescript,javascript,tsx,jsx,javascript.jsx,typescript.tsx let b:codefmt_formatter = 'prettier'
 
 
 " sirver/ultisnips
@@ -446,6 +449,7 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.local/share/nvim/plugged/vim-snippet
 let g:LanguageClient_serverCommands = {
   \ 'javascript.jsx': ['javascript-typescript-stdio'],
   \ 'typescript': ['javascript-typescript-stdio'],
+  \ 'typescript.tsx': ['javascript-typescript-stdio'],
   \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
