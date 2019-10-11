@@ -99,5 +99,4 @@ export EDITOR='nvim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ### These have to run for every new shell
-[ -f ~/Desktop/wetrust/z/z.sh ] && . $HOME/Desktop/wetrust/z/z.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
