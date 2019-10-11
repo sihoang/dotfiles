@@ -64,7 +64,6 @@ plugins=(
   yarn
   terraform
   aws
-  heroku
 )
 
 source $ZSH/oh-my-zsh.sh
