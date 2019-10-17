@@ -19,10 +19,15 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 
-# nvm stuff
+# node and nvm stuff
+# workaround with --no-use flag to load faster
+DEFAULT_NODE_VERSION="12.12.0"
+if [ -d "$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin"  ] ; then
+  PATH="$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin:$PATH"
+fi
 if [ -s "$HOME/.nvm/nvm.sh" ]; then
   export NVM_DIR="$HOME/.nvm"
-  . "$NVM_DIR/nvm.sh" # This loads nvm
+  source "$NVM_DIR/nvm.sh" --no-use
 fi
 
 
