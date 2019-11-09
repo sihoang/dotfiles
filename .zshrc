@@ -98,5 +98,10 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# While waiting for this patch
+# https://github.com/robbyrussell/oh-my-zsh/pull/8315/files
+[ -f ~/.dircolors ] && eval "$(dircolors -b ~/.dircolors)"
+
 ### These have to run for every new shell
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
