@@ -25,7 +25,7 @@ fi
 
 # node and nvm stuff
 # workaround with --no-use flag to load faster
-DEFAULT_NODE_VERSION="12.12.0"
+DEFAULT_NODE_VERSION="12.13.0"
 if [ -d "$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin"  ] ; then
   PATH="$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin:$PATH"
 fi
@@ -84,5 +84,11 @@ fi
 # Add Rust which is installed via the default rustup
 if [ -d "$HOME/.cargo/bin" ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+
+# Android on MacOS
+if [ -d "$HOME/Library/Android/sdk/platform-tools" ]; then
+  export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 fi
 
