@@ -318,6 +318,14 @@ let g:better_whitespace_enabled=1
 """ Operation Helpers
 """""""
 
+
+" ctrlpvim/ctrlp.vim
+" Ignore dep folders
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|node_modules\|log\|tmp$',
+  \ 'file': '\.DS_Store$'
+  \ }
+
 " mileszs/ack.vim
 " Use silver search
 let g:ackprg = 'ag --vimgrep'
