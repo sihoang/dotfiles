@@ -92,3 +92,7 @@ if [ -d "$HOME/Library/Android/sdk/platform-tools" ]; then
   export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 fi
 
+# Android on Linux
+if [ -d "$HOME/Android/Sdk/platform-tools" ]; then
+  export PATH="$HOME/Android/Sdk/platform-tools:$PATH"
+fi
