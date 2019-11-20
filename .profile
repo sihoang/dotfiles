@@ -91,6 +91,10 @@ fi
 if [ -d "$HOME/Library/Android/sdk/platform-tools" ]; then
   export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 fi
+if [ -d "/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin" ]; then
+  export PATH="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH"
+fi
+
 
 # Android on Linux
 if [ -d "$HOME/Android/Sdk/platform-tools" ]; then
