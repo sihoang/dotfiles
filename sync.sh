@@ -1,6 +1,6 @@
 #!/bin/bash
 # This script checks if the local configs are in-sync with dotfiles repo.
-# Perform diff localversion gitversion.
+# Perform diff localversion gitversion. Require colordiff to be installed.
 # It will prompt you before making any changes.
 #
 #
@@ -16,8 +16,6 @@ declare -a TRACKED_ITEMS=(
  "$HOME/.zshrc",".zshrc"
  "$HOME/.zprofile",".zprofile"
  "$HOME/.profile",".profile"
- "$HOME/.Xresources",".Xresources"
- "$HOME/.i3/config","i3config"
 )
 
 # Better check if there're unstaged files
