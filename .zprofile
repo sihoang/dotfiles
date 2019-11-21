@@ -1,1 +1,2 @@
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+# [MacOS only] Load the default .profile
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
