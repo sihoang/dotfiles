@@ -87,12 +87,16 @@ if [ -d "$HOME/.cargo/bin" ]; then
 fi
 
 
+# Java
+if [ -d "$HOME/.jenv/bin" ]; then
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+fi
+
+
 # Android on MacOS
 if [ -d "$HOME/Library/Android/sdk/platform-tools" ]; then
   export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
-fi
-if [ -d "/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin" ]; then
-  export PATH="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH"
 fi
 
 
