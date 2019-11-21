@@ -94,12 +94,15 @@ fi
 
 
 # Android on MacOS
-if [ -d "$HOME/Library/Android/sdk/platform-tools" ]; then
-  export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+if [ -d "$HOME/Library/Android/sdk" ]; then
+  export ANDROID_HOME="$HOME/Library/Android/sdk"
 fi
 
-
 # Android on Linux
-if [ -d "$HOME/Android/Sdk/platform-tools" ]; then
-  export PATH="$HOME/Android/Sdk/platform-tools:$PATH"
+if [ -d "$HOME/Android/Sdk" ]; then
+  export ANDROID_HOME="$HOME/Android/Sdk"
+fi
+
+if [ -d "${ANDROID_HOME}" ]; then
+  export PATH="$ANDROID_HOME/platform-tools:$PATH"
 fi
