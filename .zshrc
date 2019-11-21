@@ -100,8 +100,7 @@ export EDITOR='nvim'
 
 # While waiting for this patch
 # https://github.com/robbyrussell/oh-my-zsh/pull/8315/files
-[ -f ~/.dircolors ] && eval "$(dircolors -b ~/.dircolors)"
+# [ -f ~/.dircolors ] && eval "$(dircolors -b ~/.dircolors)"
 
 ### These have to run for every new shell
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
