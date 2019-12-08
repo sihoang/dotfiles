@@ -1,0 +1,29 @@
+#!/bin/ksh
+#
+# Make sure there is /etc/wireguard/WG_INTERFACE.conf
+# mv wg_quick.rc /etc/rc.d
+# rcctl enable wg_quick
+# rcctl set wg_quick flags WG_INTERFACE
+# rcctl start wg_quick
+
+daemon="/usr/local/bin/wg-quick"
+daemon_flags="wg"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=NO
+rc_reload=NO
+
+rc_start() {
+	${daemon} up ${daemon_flags}
+}
+
+rc_check() {
+	[[ -s /var/run/wireguard/${daemon_flags}.name ]] 
+}
+
+rc_stop() {
+	${daemon} down ${daemon_flags}
+}
+
+rc_cmd $1
