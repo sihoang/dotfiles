@@ -8,6 +8,10 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+export CLICOLOR=1
+# overwrite PATH to avoid duplicate entries
+PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
@@ -16,11 +20,6 @@ fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
-fi
-
-# set PATH used by brew
-if [ -d "/usr/local/sbin" ] ; then
-    PATH="/usr/local/sbin:$PATH"
 fi
 
 # node and nvm stuff
