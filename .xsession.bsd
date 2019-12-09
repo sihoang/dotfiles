@@ -1,0 +1,12 @@
+# use UTF-8 everywhere
+# gnome-terminal would throw without this
+export LANG=en_US.UTF-8
+
+# xidle will lock your display after a period of inactivity
+# use here instead of i3 so that it launches once
+xidle &
+
+# disable system beep
+xset b off
+
+exec i3

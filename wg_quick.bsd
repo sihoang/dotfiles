@@ -11,7 +11,6 @@ daemon_flags="wg"
 
 . /etc/rc.d/rc.subr
 
-rc_bg=NO
 rc_reload=NO
 
 rc_start() {
