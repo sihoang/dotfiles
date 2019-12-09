@@ -10,7 +10,7 @@ set -ex
 
 [[ $UID != 0 ]] && exec sudo -E "$(readlink -f "$0")" "$@"
 
-WG_LOCAL_IP=10.0.0.2
+WG_LOCAL_IP=10.0.0.2/24
 DNS_NS=1.1.1.1
 
 up() {
