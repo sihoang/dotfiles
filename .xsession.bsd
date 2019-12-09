@@ -2,6 +2,9 @@
 # gnome-terminal would throw without this
 export LANG=en_US.UTF-8
 
+# load Xresources file
+xrdb -merge $HOME/.Xresources
+
 # xidle will lock your display after a period of inactivity
 # use here instead of i3 so that it launches once
 xidle &
