@@ -48,6 +48,23 @@ staff:\
 ```
 
 
+- Add `softdep,noatime` to all partitions (except swap) to improve disk performance
+```
+nvim /etc/fstab
+
+.b none swap sw
+.a / ffs rw,softdep,noatime 1 1
+.l /home ffs rw,softdep,noatime,nodev,nosuid 1 2
+.d /tmp ffs rw,softdep,noatime,nodev,nosuid 1 2
+.f /usr ffs rw,softdep,noatime,nodev 1 2
+.g /usr/X11R6 ffs rw,softdep,noatime,nodev 1 2
+.h /usr/local ffs rw,softdep,noatime,wxallowed,nodev 1 2
+.k /usr/obj ffs rw,softdep,noatime,nodev,nosuid 1 2
+.j /usr/src ffs rw,softdep,noatime,nodev,nosuid 1 2
+.e /var ffs rw,softdep,noatime,nodev,nosuid 1 2
+````
+
+
 - Modify xenodm to disable xconsole, beep and enable background pictures
 ```
 nvim /etc/X11/xenodm/Xsetup_0
