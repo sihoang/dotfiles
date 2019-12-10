@@ -71,9 +71,12 @@ sed -i 's/maximize/stretch/' /usr/local/bin/openbsd-wallpaper
 ```
 
 
-- Enable natural scroll
+- Enable natural scroll and tapping
 ```
-echo "mouse.reverse_scrolling=1" > /etc/wsconsctl.conf
+nvim /etc/wsconsctl.conf
+
+mouse.reverse_scrolling=1
+mouse.tp.tapping=1
 ```
 
 
@@ -132,4 +135,3 @@ multicast_host=YES
 wg_quick_flags=<WIREGUARD_IF>
 sshd_flags=NO
 ```
-
