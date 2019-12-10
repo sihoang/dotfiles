@@ -1,7 +1,19 @@
 " Minimal vim/nvim
+" ~/.vimrc
 " ~/.config/nvim/init.vim
 
 set nu
+syntax on
+
+" Load indentation rules and plugins
+" according to the detected filetype
+filetype plugin indent on
+
+" Highlight all search matches
+set hlsearch
+
+" Incremental search
+set incsearch
 
 " Number of space characters that will be inserted
 " when the tab key is pressed
@@ -23,3 +35,4 @@ nnoremap ; :
 
 " Unsets the last search pattern register by hitting <C-l>
 nnoremap <silent> <C-l> :nohlsearch<CR>
+
