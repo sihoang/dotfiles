@@ -97,7 +97,7 @@ mouse.tp.tapping=1
 ```
 
 
-- Add apm hooks to work with wg-quick
+- Add apm hooks to restart wg-quick and lock screen when closing the lid
 ```
 mkdir /etc/apm
 ```
@@ -105,17 +105,24 @@ mkdir /etc/apm
 ```
 nvim /etc/apm/suspend
 
+
 #!/bin/sh
+# Prevent dhclient to auto-restart on resume
 pkill dhclient
+# Lock the screen automatically when the lid is closed
+pkill -USR1 xidle
 ```
 
 ```
 nvim /etc/apm/resume
 
+
 #!/bin/sh
+# Manually start dhclient and restart wg_quick in right order
 dhclient iwm0
 [[ -s /var/run/rc.d/wg_quick ]] && rcctl restart wg_quick
 ```
+
 
 - Make apm hooks executable
 ```
