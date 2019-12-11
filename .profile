@@ -10,12 +10,12 @@
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+  export PATH="$HOME/bin:$PATH"
 fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+  export PATH="$HOME/.local/bin:$PATH"
 fi
 
 
@@ -23,7 +23,7 @@ fi
 # workaround with --no-use flag to load faster
 DEFAULT_NODE_VERSION="12.13.0"
 if [ -d "$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin"  ] ; then
-  PATH="$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin:$PATH"
+  export PATH="$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin:$PATH"
 fi
 if [ -s "$HOME/.nvm/nvm.sh" ]; then
   export NVM_DIR="$HOME/.nvm"
@@ -33,40 +33,30 @@ fi
 
 # Install Go manually from tar https://golang.org/doc/install#tarball
 if [ -d "/usr/local/go" ]; then
-  export GOPATH="$HOME/go"
   export GOROOT="/usr/local/go"
-  test -d "${GOPATH}" || mkdir "${GOPATH}"
 fi
-
 
 # brew install go
 if [ -d "/usr/local/opt/go" ]; then
-  export GOPATH="$HOME/go"
   export GOROOT="/usr/local/opt/go/libexec"
-  test -d "${GOPATH}" || mkdir "${GOPATH}"
 fi
-
 
 # pacman -S go
 if [ -d "/usr/lib/go" ]; then
-  export GOPATH="$HOME/go"
   export GOROOT="/usr/lib/go"
-  test -d "${GOPATH}" || mkdir "${GOPATH}"
 fi
-
 
 # dnf install golang
 if [ -d "/usr/lib/golang" ]; then
-  export GOPATH="$HOME/go"
   export GOROOT="/usr/lib/golang"
-  test -d "${GOPATH}" || mkdir "${GOPATH}"
 fi
 
-
 # Set PATH if go is installed
-if [ -d "$GOPATH" ]; then
+if [ -d "$GOROOT" ]; then
   export GO111MODULE=on
-  PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+  export GOPATH="$HOME/go"
+  test -d "${GOPATH}" || mkdir "${GOPATH}"
+  export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 fi
 
 
