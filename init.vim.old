@@ -1,3 +1,7 @@
+" v1
+" IDE with All-you-can-eat Settings
+"
+
 " plugins will be downloaded under the specified directory.
 call plug#begin('~/.local/share/nvim/plugged')
 
