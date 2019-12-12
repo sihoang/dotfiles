@@ -15,4 +15,7 @@ xidle &
 # disable system beep
 xset b off
 
+# use caps lock as ctrl key
+setxkbmap -option ctrl:nocaps
+
 exec i3
