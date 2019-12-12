@@ -17,7 +17,7 @@ syspatch
 
 - Install packages
 ```
-pkg_add i3-gaps git gnupg neovim wireguard zsh colorls
+pkg_add i3-gaps git gnupg neovim wireguard zsh colorls the_silver_searcher
 ```
 
 copy \*.bsd files to the right locations

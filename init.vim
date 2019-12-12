@@ -27,6 +27,10 @@ Plug 'tpope/vim-surround'
 " Dark powered asynchronous completion framework for neovim/Vim8
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+" Vim plugin for the Perl module / CLI script 'ack'
+" Need the silver search 'ag'
+Plug 'mileszs/ack.vim'
+
 " ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim
 " 0.2.0+ and Vim 8 while you edit your text files.
 Plug 'dense-analysis/ale'
@@ -120,6 +124,13 @@ let g:indentLine_concealcursor = ''
 let g:deoplete#enable_at_startup = 1
 
 
+" mileszs/ack.vim 
+" Use silver search
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" Shortcut ack. ! prevents jumping to first result.
+nnoremap <Leader>a :Ack!
+
+
 " dense-analysis/ale
 let g:ale_lint_on_text_changed = 'never' " save battery
 let g:ale_fix_on_save = 1
@@ -140,7 +151,6 @@ nmap <Leader>d <Plug>(ale_fix)
 " gofmt + goimports on save
 " https://github.com/fatih/vim-go/issues/207
 let g:go_fmt_command = "goimports"
-
 " Disable the default `gd` mapping to use the go-def-vertical
 let g:go_def_mapping_enabled = 0
 au Filetype go nmap gd <Plug>(go-def-vertical)
