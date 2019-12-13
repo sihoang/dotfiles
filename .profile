@@ -9,25 +9,28 @@
 #umask 022
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-  export PATH="$HOME/bin:$PATH"
+if [ -d "$HOME/bin" ]; then
+  export PATH="$PATH:$HOME/bin"
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-  export PATH="$HOME/.local/bin:$PATH"
+if [ -d "$HOME/.local/bin" ]; then
+  export PATH="$PATH:$HOME/.local/bin"
 fi
 
 
 # node and nvm stuff
 # workaround with --no-use flag to load faster
 DEFAULT_NODE_VERSION="12.13.0"
-if [ -d "$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin"  ] ; then
+if [ -d "$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin"  ]; then
   export PATH="$PATH:$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin"
 fi
 if [ -s "$HOME/.nvm/nvm.sh" ]; then
   export NVM_DIR="$HOME/.nvm"
   source "$NVM_DIR/nvm.sh" --no-use
+fi
+if [ -d "$HOME/.npm-packages/bin" ]; then
+  export PATH="$PATH:$HOME/.npm-packages/bin"
 fi
 
 
