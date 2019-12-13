@@ -94,6 +94,10 @@ nnoremap <C-s> :wincmd w<CR>
 """ Plugin Configs
 """""""
 
+" vim-airline
+let g:airline_powerline_fonts = 1
+
+
 " rakr/vim-one
 let g:one_allow_italics = 1
 set background=dark
