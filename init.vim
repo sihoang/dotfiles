@@ -8,9 +8,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Lean & mean status/tabline for vim that's light as air.
 Plug 'vim-airline/vim-airline'
 
-" This is the official theme repository for vim-airline
-Plug 'vim-airline/vim-airline-themes'
-
 " Adaptation of one-light and one-dark colorschemes for Vim
 " Refer to the Plugin Configs section
 Plug 'rakr/vim-one'
@@ -96,11 +93,6 @@ nnoremap <C-s> :wincmd w<CR>
 """""""
 """ Plugin Configs
 """""""
-
-" vim-airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme='tomorrow'
-
 
 " rakr/vim-one
 let g:one_allow_italics = 1
