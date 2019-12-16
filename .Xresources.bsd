@@ -6,7 +6,7 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 ! fixed is the one true font - use iso10646 for unicode characters
-*font         : -misc-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-iso10646-1
+*font         : -misc-fixed-medium-r-semicondensed-*-16-*-*-*-*-*-iso10646-1
 
 ! ===== xidle
 ! drag pointer to lower left corner to lock screen
@@ -26,6 +26,6 @@ XLock.info        :
 XLock.mode        : blank
 XLock.username    : username: 
 XLock.password    : password: 
-XLock.font        : -misc-fixed-medium-r-normal-*-15-*-*-*-*-*-iso10646-1
-XLock.planfont    : -misc-fixed-medium-r-normal-*-13-*-*-*-*-*-iso10646-1
+XLock.font        : -misc-fixed-medium-r-normal-*-16-*-*-*-*-*-iso10646-1
+XLock.planfont    : -misc-fixed-medium-r-normal-*-16-*-*-*-*-*-iso10646-1
 
