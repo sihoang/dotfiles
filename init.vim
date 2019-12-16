@@ -68,6 +68,13 @@ set shiftwidth=2
 " Use Ctrl-V<Tab> for a real tab character
 set expandtab
 
+" Automatic word wrapping
+set tw=80
+
+" Use soft wrap which does not change the text
+" but simply displays it on multiple lines
+set wrap linebreak nolist
+
 " Uncomment if terminal supports true color
 " Test: printf "\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n"
 " If TRUECOLOR appears in RED then the terminal supports true color

@@ -27,6 +27,13 @@ set shiftwidth=2
 " Use Ctrl-V<Tab> for a real tab character
 set expandtab
 
+" Automatic word wrapping
+set tw=80
+
+" Use soft wrap which does not change the text
+" but simply displays it on multiple lines
+set wrap linebreak nolist
+
 " Exit to normal mode
 inoremap jj <ESC>
 
