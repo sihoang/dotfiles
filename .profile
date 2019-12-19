@@ -21,7 +21,7 @@ fi
 
 # node and nvm stuff
 # workaround with --no-use flag to load faster
-DEFAULT_NODE_VERSION="12.13.0"
+DEFAULT_NODE_VERSION="12.14.0"
 if [ -d "$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin"  ]; then
   export PATH="$PATH:$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin"
 fi
