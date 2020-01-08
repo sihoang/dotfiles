@@ -142,11 +142,17 @@ let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_fixers = {
   \ '*': ['prettier'],
   \ 'javascript': ['eslint'],
-  \ 'typescript': ['tslint'],
   \ }
 let g:ale_linters = {
   \ 'solidity': ['solium'],
   \ }
+" Do not lint or fix minified files
+" go is handled by vim-go
+let g:ale_pattern_options = {
+  \ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
+  \ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
+  \ '\.go$': {'ale_linters': [], 'ale_fixers': []},
+  \}
 nmap <Leader>d <Plug>(ale_fix)
 
 
