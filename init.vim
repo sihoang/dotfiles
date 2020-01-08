@@ -35,6 +35,9 @@ Plug 'dense-analysis/ale'
 " Go development plugin for Vim
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" Typescript syntax files for Vim
+Plug 'leafgarland/typescript-vim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -155,6 +158,12 @@ let g:ale_pattern_options = {
   \}
 nmap <Leader>d <Plug>(ale_fix)
 
+
+" leafgarland/typescript-vim
+" Set filetypes as typescript.tsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+" Let dense-analysis/ale do the formatting
+let g:typescript_indent_disable = 1
 
 " fatih/vim-go
 " gofmt + goimports on save
