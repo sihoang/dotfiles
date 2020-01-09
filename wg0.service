@@ -1,0 +1,11 @@
+[Unit]
+Description=Launch wg0 vpn
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/wg0.sh up
+
+[Install]
+WantedBy=multi-user.target
