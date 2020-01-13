@@ -19,20 +19,11 @@ if [ -d "$HOME/.local/bin" ]; then
 fi
 
 
-# node and nvm stuff
-# workaround with --no-use flag to load faster
-DEFAULT_NODE_VERSION="12.14.1"
-if [ -d "$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin"  ]; then
-  export PATH="$PATH:$HOME/.nvm/versions/node/v$DEFAULT_NODE_VERSION/bin"
-fi
-if [ -s "$HOME/.nvm/nvm.sh" ]; then
-  export NVM_DIR="$HOME/.nvm"
-  source "$NVM_DIR/nvm.sh" --no-use
-fi
+# Install node via package managers
+# npmrc: prefix = ${HOME}/.npm-packages 
 if [ -d "$HOME/.npm-packages/bin" ]; then
   export PATH="$PATH:$HOME/.npm-packages/bin"
 fi
-
 
 # Install Go manually from tar https://golang.org/doc/install#tarball
 if [ -d "/usr/local/go" ]; then
