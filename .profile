@@ -26,8 +26,10 @@ if [ -s "$HOME/.nvm/nvm.sh" ]; then
   source "$NVM_DIR/nvm.sh" --no-use
   # assume the nvm alias default is set to the specific version
   # i.e nvm alias default 12.14.1
-  NVM_NODE="$NVM_DIR/versions/node/v$(<$NVM_DIR/alias/default)/bin"
-  [ -d "$NVM_NODE" ] && export PATH="$PATH:$NVM_NODE"
+  if [ -s "$NVM_DIR/alias/default" ]; then
+    NVM_NODE="$NVM_DIR/versions/node/v$(<$NVM_DIR/alias/default)/bin"
+    [ -d "$NVM_NODE" ] && export PATH="$PATH:$NVM_NODE"
+  fi
 fi
 
 # Nodejs installed by package managers
