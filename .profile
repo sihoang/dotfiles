@@ -19,14 +19,20 @@ if [ -d "$HOME/.local/bin" ]; then
 fi
 
 
-# Install node via package managers
+# Nodejs installed by nvm
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  # add --no-use to work workaround the slow startup
+  source "$NVM_DIR/nvm.sh" --no-use
+  # assume the nvm alias default is set
+  NVM_NODE="$NVM_DIR/versions/node/v$(<$NVM_DIR/alias/default)/bin"
+  [ -d "$NVM_NODE" ] && export PATH="$PATH:$NVM_NODE"
+fi
+
+# Nodejs installed by package managers
 # npmrc: prefix = ${HOME}/.npm-packages 
 if [ -d "$HOME/.npm-packages/bin" ]; then
   export PATH="$PATH:$HOME/.npm-packages/bin"
-fi
-# brew install node@12
-if [ -d "/usr/local/opt/node@12/bin" ]; then
-  export PATH="$PATH:/usr/local/opt/node@12/bin"
 fi
 
 
