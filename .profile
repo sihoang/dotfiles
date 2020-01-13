@@ -24,6 +24,11 @@ fi
 if [ -d "$HOME/.npm-packages/bin" ]; then
   export PATH="$PATH:$HOME/.npm-packages/bin"
 fi
+# brew install node@12
+if [ -d "/usr/local/opt/node@12/bin" ]; then
+  export PATH="$PATH:/usr/local/opt/node@12/bin"
+fi
+
 
 # Install Go manually from tar https://golang.org/doc/install#tarball
 if [ -d "/usr/local/go" ]; then
