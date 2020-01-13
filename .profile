@@ -60,7 +60,7 @@ fi
 if [ -d "$GOROOT" ]; then
   export GO111MODULE=on
   export GOPATH="$HOME/go"
-  test -d "${GOPATH}" || mkdir "${GOPATH}"
+  test -d "$GOPATH" || mkdir "$GOPATH"
   export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 fi
 
@@ -94,6 +94,6 @@ if [ -d "$HOME/Android/Sdk" ]; then
   export ANDROID_HOME="$HOME/Android/Sdk"
 fi
 
-if [ -d "${ANDROID_HOME}" ]; then
+if [ -d "$ANDROID_HOME" ]; then
   export PATH="$PATH:$ANDROID_HOME/platform-tools"
 fi
