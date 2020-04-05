@@ -28,6 +28,10 @@ Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Need the silver search 'ag'
 Plug 'mileszs/ack.vim'
 
+" A command-line fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 " ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim
 " 0.2.0+ and Vim 8 while you edit your text files.
 Plug 'dense-analysis/ale'
