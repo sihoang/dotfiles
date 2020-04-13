@@ -32,6 +32,9 @@ Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" fugitive.vim: A Git wrapper so awesome, it should be illegal
+Plug 'tpope/vim-fugitive'
+
 " ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim
 " 0.2.0+ and Vim 8 while you edit your text files.
 Plug 'dense-analysis/ale'
