@@ -100,3 +100,7 @@ fi
 if [ -d "$ANDROID_HOME" ]; then
   export PATH="$PATH:$ANDROID_HOME/platform-tools"
 fi
+
+if [ -d "$HOME/flutter/bin" ]; then
+  export PATH="$PATH:$HOME/flutter/bin"
+fi
