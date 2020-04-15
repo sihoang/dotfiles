@@ -104,3 +104,7 @@ fi
 if [ -d "$HOME/flutter/bin" ]; then
   export PATH="$PATH:$HOME/flutter/bin"
 fi
+
+if [ -d "$HOME/dart-sdk/bin" ]; then
+  export PATH="$PATH:$HOME/dart-sdk/bin"
+fi
