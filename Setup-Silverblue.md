@@ -22,6 +22,9 @@ firewall-cmd --complete-reload
 - Override detach_keys to avoid CTRL+P while in toolbox
 ```
 nvim ~/.config/containers/libpod.conf
-detach_keys = "ctrl-d,ctrl-q"
+# use ctrl-a as tmux
+detach_keys = "ctrl-a,ctrl-x"
 ```
-Note: ctrl-d is the default shortcut for `toolbox exit`
+Note: Avoid these leaders
+* ctrl-d is used by vim and is the default shortcut for `toolbox exit`
+* ctrl-p is used by weechat
