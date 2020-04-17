@@ -2,7 +2,7 @@
 " IDE with Lean Settings
 "
 
-" plugins will be downloaded under the specified directory.
+" Plugins will be downloaded under the specified directory.
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Lean & mean status/tabline for vim that's light as air.
@@ -13,7 +13,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'rakr/vim-one'
 
 " A tree explorer plugin for vim.
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 
 " A vim plugin to display the indention levels with thin vertical lines
 Plug 'yggdroot/indentline'
@@ -39,11 +39,20 @@ Plug 'tpope/vim-fugitive'
 " 0.2.0+ and Vim 8 while you edit your text files.
 Plug 'dense-analysis/ale'
 
-" Go development plugin for Vim
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 " Typescript syntax files for Vim
 Plug 'leafgarland/typescript-vim'
+
+" Syntax highlighting for Dart in Vim
+Plug 'dart-lang/dart-vim-plugin'
+
+" A vim plugin for communicating with a language server
+Plug 'natebosch/vim-lsc'
+
+" vim-lsc server configuration for the Dart language
+Plug 'natebosch/vim-lsc-dart'
+
+" deoplete source for vim-lsc
+Plug 'sihoang/deoplete-vim-lsc'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -106,6 +115,11 @@ nnoremap <silent> <C-l> :nohlsearch<CR>
 " If it freezes, hit Ctr-q to resume
 nnoremap <C-s> :wincmd w<CR>
 
+" Avoid suppressing error messages from plugins
+set shortmess-=F
+
+" Close the preview window after completion is done
+autocmd CompleteDone * silent! pclose!
 
 """""""
 """ Plugin Configs
@@ -121,9 +135,7 @@ set background=dark
 colorscheme one
 
 
-" scrooloose/nerdtree
-autocmd vimenter * NERDTree | wincmd w
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" preservim/nerdtree
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowHidden = 1
 map <C-h> :NERDTreeToggle<CR>
@@ -137,45 +149,77 @@ let g:indentLine_concealcursor = ''
 let g:deoplete#enable_at_startup = 1
 
 
-" mileszs/ack.vim 
+" mileszs/ack.vim
 " Use silver search
 let g:ackprg = 'ag --nogroup --nocolor --column'
 " Shortcut ack. ! prevents jumping to first result.
 nnoremap <Leader>a :Ack!
 
 
-" dense-analysis/ale
-let g:ale_lint_on_text_changed = 'never' " save battery
-let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_use_local_config = 1
-" Make sure these bin are in the $PATH
-let g:ale_fixers = {
-  \ '*': ['prettier'],
-  \ 'javascript': ['eslint'],
-  \ }
-let g:ale_linters = {
-  \ 'solidity': ['solium'],
-  \ }
-" Do not lint or fix minified files
-" go is handled by vim-go
-let g:ale_pattern_options = {
-  \ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
-  \ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
-  \ '\.go$': {'ale_linters': [], 'ale_fixers': []},
-  \}
-nmap <Leader>d <Plug>(ale_fix)
-
-
 " leafgarland/typescript-vim
 " Set filetypes as typescript.tsx
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.ts,*.js,*.tsx,*.jsx set filetype=typescript.tsx
 " Let dense-analysis/ale do the formatting
 let g:typescript_indent_disable = 1
 
-" fatih/vim-go
-" gofmt + goimports on save
-" https://github.com/fatih/vim-go/issues/207
-let g:go_fmt_command = "goimports"
-" Disable the default `gd` mapping to use the go-def-vertical
-let g:go_def_mapping_enabled = 0
-au Filetype go nmap gd <Plug>(go-def-vertical)
+
+" dense-analysis/ale
+" Save battery
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_fix_on_save = 1
+" Let natebosch/vim-lsc handle lsp
+let g:ale_disable_lsp = 1
+" Make sure these bin are in the $PATH
+let g:ale_fixers = {
+  \ '*': ['prettier'],
+  \ 'typescript.tsx': ['eslint'],
+  \ 'dart': ['dartfmt'],
+  \ 'go': ['goimports'],
+  \ }
+let g:ale_linters = {
+  \ 'typescript.tsx': ['eslint'],
+  \ 'solidity': ['solium'],
+  \ }
+" Do not lint or fix minified files
+let g:ale_pattern_options = {
+  \ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
+  \ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
+  \ }
+let g:ale_javascript_prettier_use_local_config = 1
+
+
+" dart-lang/dart-vim-plugin
+let dart_html_in_string = v:true
+
+
+" natebosch/vim-lsc
+let g:lsc_server_commands = {
+  \ 'dart': 'dart_language_server',
+  \ 'go': {
+  \   'command': 'gopls serve',
+  \   'log_level': -1,
+  \   'suppress_stderr': v:true,
+  \ },
+  \ 'typescript.tsx': {
+  \   'command': 'typescript-language-server --stdio',
+  \   'log_level': -1,
+  \   'suppress_stderr': v:true,
+  \ },
+  \ }
+
+" Complete mappings are:
+let g:lsc_auto_map = {
+  \ 'GoToDefinition': '<C-]>',
+  \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
+  \ 'FindReferences': 'gr',
+  \ 'NextReference': '<C-n>',
+  \ 'PreviousReference': '<C-p>',
+  \ 'FindImplementations': 'gI',
+  \ 'FindCodeActions': 'ga',
+  \ 'Rename': 'gR',
+  \ 'ShowHover': v:true,
+  \ 'DocumentSymbol': 'go',
+  \ 'WorkspaceSymbol': 'gS',
+  \ 'SignatureHelp': 'gm',
+  \ 'Completion': 'completefunc',
+  \ }
