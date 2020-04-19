@@ -34,3 +34,7 @@ Note: Avoid these leaders
 * Fonts > Antialiasing: Subpixel
 * Keyboard & Mouse > Additional Layout Options > Caps Lock behavior > Caps Lock
   is also a Ctrl
+
+
+- Use `.profile` as `.zprofile` because of `toolbox enter` does not source
+  `.profile`
