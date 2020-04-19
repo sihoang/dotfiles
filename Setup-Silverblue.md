@@ -28,3 +28,9 @@ detach_keys = "ctrl-a,ctrl-x"
 Note: Avoid these leaders
 * ctrl-d is used by vim and is the default shortcut for `toolbox exit`
 * ctrl-p is used by weechat
+
+
+- Configure fonts and keymaps in gnome-tweak-tool
+* Fonts > Antialiasing: Subpixel
+* Keyboard & Mouse > Additional Layout Options > Caps Lock behavior > Caps Lock
+  is also a Ctrl
