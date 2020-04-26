@@ -2,7 +2,7 @@
 
 ### Post installation
 
-- Layer these "important" packages and restart to take effect
+- Layer these "important" packages and restart to take effect:
 
 ```
 rpm-ostree install gnome-tweak-tool util-linux-user zsh
@@ -14,6 +14,14 @@ rpm-ostree install gnome-tweak-tool util-linux-user zsh
 chsh -s $(which zsh)
 ```
 
+- Set up toolbox:
+
+```
+sudo dnf install zsh neovim tmux fzf the_silver_searcher util-linux-user pinentry
+pip3 install pynvim --user
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \\n    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
 - Configure firewall:
 
 ```
@@ -21,7 +29,7 @@ firewall-cmd --set-default-zone=drop
 firewall-cmd --complete-reload
 ```
 
-- Override detach_keys to avoid CTRL+P while in toolbox
+- Override detach_keys to avoid CTRL+P while in toolbox:
 
 ```
 nvim ~/.config/containers/libpod.conf
@@ -60,5 +68,5 @@ rpm-ostree install qemu-kvm
 - Install dependencies in toolbox:
 
 ```
-sudo dnf install libcanberra-gtk2 mesa-libGLU chattr e2fsprogs mesa-dri-drivers vulkan
+sudo dnf install libcanberra-gtk2 mesa-libGLU chattr e2fsprogs nss mesa-dri-drivers vulkan
 ```
