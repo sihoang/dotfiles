@@ -138,6 +138,9 @@ colorscheme one
 " preservim/nerdtree
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowHidden = 1
+" Auto close NERDTree to exit on :q
+" 'nested' to make sure the VimLeave event is fired
+autocmd bufenter * nested if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-h> :NERDTreeToggle<CR>
 
 
