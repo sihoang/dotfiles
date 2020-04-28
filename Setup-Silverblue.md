@@ -17,9 +17,15 @@ chsh -s $(which zsh)
 - Set up toolbox:
 
 ```
-sudo dnf install zsh neovim tmux fzf the_silver_searcher util-linux-user pinentry
+sudo dnf install zsh neovim tmux fzf the_silver_searcher util-linux-user pinentry python3-pip
 pip3 install pynvim --user
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \\n    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+For a new system, install oh-my-zsh, vim-plug and copy dotfiles accordingly:
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 - Configure firewall:
