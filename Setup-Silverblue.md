@@ -20,7 +20,9 @@ chsh -s $(which zsh)
 sudo dnf install zsh neovim tmux fzf the_silver_searcher util-linux-user pinentry python3-pip
 pip3 install pynvim --user
 ```
+
 For a new system, install oh-my-zsh, vim-plug and copy dotfiles accordingly:
+
 ```
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -74,5 +76,7 @@ rpm-ostree install qemu-kvm
 - Install dependencies in toolbox:
 
 ```
-sudo dnf install libcanberra-gtk2 mesa-libGLU chattr e2fsprogs nss mesa-dri-drivers vulkan
+sudo dnf install libcanberra-gtk2
+sudo dnf install pulseaudio-libs alsa-lib libglvnd-glx libXrender libXcomposite libXcursor freetype
+sudo dnf install nss fontconfig e2fsprogs mesa-libGLU mesa-dri-drivers mesa-vulkan-drivers
 ```
