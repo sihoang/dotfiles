@@ -176,6 +176,7 @@ let g:ale_fixers = {
   \ 'go': ['goimports'],
   \ }
 let g:ale_linters = {
+  \ 'go': ['golangci-lint'],
   \ 'typescript.tsx': ['eslint'],
   \ 'solidity': ['solium'],
   \ }
