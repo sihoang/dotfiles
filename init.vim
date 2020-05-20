@@ -90,6 +90,9 @@ set expandtab
 " Automatic word wrapping
 set tw=80
 
+" gofmt uses tabs
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+
 " Use soft wrap which does not change the text
 " but simply displays it on multiple lines
 set wrap linebreak nolist
@@ -157,7 +160,7 @@ nnoremap <Leader>a :Ack!
 
 " leafgarland/typescript-vim
 " Set filetypes as typescript.tsx
-autocmd BufNewFile,BufRead *.ts,*.js,*.tsx,*.jsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.ts,*.tsx set filetype=typescript.tsx
 " Let dense-analysis/ale do the formatting
 let g:typescript_indent_disable = 1
 
@@ -171,21 +174,22 @@ let g:ale_disable_lsp = 1
 " Make sure these bin are in the $PATH
 let g:ale_fixers = {
   \ '*': ['prettier'],
-  \ 'typescript.tsx': ['eslint'],
-  \ 'dart': ['dartfmt'],
+  \ 'javascript': ['eslint'],
   \ 'go': ['goimports'],
+  \ 'dart': ['dartfmt'],
   \ }
+" Disable dart linters so that the fan doesn't spin like crazy
 let g:ale_linters = {
+  \ 'javascript': ['eslint'],
   \ 'go': ['golangci-lint'],
-  \ 'typescript.tsx': ['eslint'],
   \ 'solidity': ['solium'],
+  \ 'dart': [],
   \ }
 " Do not lint or fix minified files
 let g:ale_pattern_options = {
   \ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
   \ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
   \ }
-let g:ale_javascript_prettier_use_local_config = 1
 
 
 " dart-lang/dart-vim-plugin
