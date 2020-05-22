@@ -157,6 +157,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Shortcut ack. ! prevents jumping to first result.
 nnoremap <Leader>a :Ack!
 
+" junegunn/fzf
+nnoremap <Leader>f :FZF<CR>
 
 " leafgarland/typescript-vim
 " Set filetypes as typescript.tsx
