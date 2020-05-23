@@ -54,6 +54,9 @@ Plug 'natebosch/vim-lsc-dart'
 " deoplete source for vim-lsc
 Plug 'sihoang/deoplete-vim-lsc'
 
+" Vim configuration for Rust
+Plug 'rust-lang/rust.vim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -229,3 +232,7 @@ let g:lsc_auto_map = {
   \ 'SignatureHelp': 'gm',
   \ 'Completion': 'completefunc',
   \ }
+
+
+" rust-lang/rust.vim
+let g:rustfmt_autosave = 1
