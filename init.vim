@@ -21,9 +21,6 @@ Plug 'yggdroot/indentline'
 " surround.vim: quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
 
-" Dark powered asynchronous completion framework for neovim/Vim8
-Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 " Vim plugin for the Perl module / CLI script 'ack'
 " Need the silver search 'ag'
 Plug 'mileszs/ack.vim'
@@ -50,9 +47,6 @@ Plug 'natebosch/vim-lsc'
 
 " vim-lsc server configuration for the Dart language
 Plug 'natebosch/vim-lsc-dart'
-
-" deoplete source for vim-lsc
-Plug 'sihoang/deoplete-vim-lsc'
 
 " Vim configuration for Rust
 Plug 'rust-lang/rust.vim'
@@ -150,18 +144,14 @@ map <C-h> :NERDTreeToggle<CR>
 let g:indentLine_concealcursor = ''
 
 
-" shougo/deoplete.nvim
-let g:deoplete#enable_at_startup = 1
-
-
 " mileszs/ack.vim
 " Use silver search
 let g:ackprg = 'ag --nogroup --nocolor --column'
 " Shortcut ack. ! prevents jumping to first result.
 nnoremap <Leader>a :Ack!
 
-" junegunn/fzf
-nnoremap <Leader>f :FZF<CR>
+" junegunn/fzf.vim
+nnoremap <Leader>f :Files<CR>
 
 " leafgarland/typescript-vim
 " Set filetypes as typescript.tsx
