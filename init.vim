@@ -80,15 +80,20 @@ set tabstop=2
 " also used by = < > commands
 set shiftwidth=2
 
+" Number of spaces that a <Tab> counts for while performing editing
+" operations, like inserting a <Tab> or using <BS>
+set softtabstop=2
+
 " On pressing tab, insert 2 spaces
 " Use Ctrl-V<Tab> for a real tab character
 set expandtab
 
+" gofmt uses tabs
+" size 4 for better readability
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+
 " Automatic word wrapping
 set tw=80
-
-" gofmt uses tabs
-au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
 " Use soft wrap which does not change the text
 " but simply displays it on multiple lines
