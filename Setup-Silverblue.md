@@ -26,8 +26,8 @@ For a new system, install oh-my-zsh, vim-plug and copy dotfiles accordingly:
 ```
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
 - Configure firewall:
@@ -79,4 +79,18 @@ rpm-ostree install qemu-kvm
 sudo dnf install libcanberra-gtk2
 sudo dnf install pulseaudio-libs alsa-lib libglvnd-glx libXrender libXcomposite libXcursor freetype
 sudo dnf install nss fontconfig e2fsprogs mesa-libGLU mesa-dri-drivers mesa-vulkan-drivers
+```
+
+- Set up go in toolbox:
+
+* Install golangci-lint:
+
+```
+curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.27.0
+```
+
+- Install gopls:
+
+```
+go get golang.org/x/tools/gopls@latest
 ```
