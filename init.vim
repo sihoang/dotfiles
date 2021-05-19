@@ -51,6 +51,9 @@ Plug 'natebosch/vim-lsc-dart'
 " Vim configuration for Rust
 Plug 'rust-lang/rust.vim'
 
+" Vim syntax file for solidity
+Plug 'tomlion/vim-solidity'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -182,7 +185,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'go': ['golangci-lint'],
-  \ 'solidity': ['solium'],
+  \ 'solidity': ['solhint'],
   \ 'dart': [],
   \ }
 " Do not lint or fix minified files
