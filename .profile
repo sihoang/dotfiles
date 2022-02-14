@@ -108,3 +108,8 @@ fi
 if [ -d "$HOME/dart-sdk/bin" ]; then
   export PATH="$PATH:$HOME/dart-sdk/bin"
 fi
+
+if [ -d "$HOME/.fly" ]; then
+  export FLYCTL_INSTALL="$HOME/.fly"
+  export PATH="$PATH:$FLYCTL_INSTALL/bin"
+fi
